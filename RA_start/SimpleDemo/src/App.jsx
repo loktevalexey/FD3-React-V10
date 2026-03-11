@@ -7,7 +7,7 @@ function App() {
           <Warning question="Не трогайте мокрыми руками оголённые провода!" />,
           <p>конец</p>
       </div>
-  )
+  );
 }
 
 export default App

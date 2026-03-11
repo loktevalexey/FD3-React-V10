@@ -10,7 +10,7 @@ function App() {
       question={questionText}
       answers={answersArr}
     />
-  )
+  );
 }
 
 export default App
