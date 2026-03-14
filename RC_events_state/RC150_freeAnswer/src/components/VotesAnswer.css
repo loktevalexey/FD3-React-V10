@@ -25,3 +25,10 @@ label.VotesBlockAnswer span
 {
   vertical-align: 3px;
 }
+
+label.VotesBlockAnswer .FreeAnswer
+{
+  width: 150px;
+  margin-left: 18px;
+  vertical-align: 3px;
+}
