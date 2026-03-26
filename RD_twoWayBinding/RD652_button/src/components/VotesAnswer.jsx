@@ -18,7 +18,9 @@ function VotesAnswer(props) {
             <div>
                 <label className='VotesBlockAnswer'>
                     <input type='radio' value={props.code} name='voteanswer'
-                           onChange={answerClicked} />
+                           checked={isSelected}
+                           onChange={answerClicked}
+                    />
                     <span>{props.text}</span>
                     {
                         props.freeanswer &&
