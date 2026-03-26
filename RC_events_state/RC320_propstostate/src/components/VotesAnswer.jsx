@@ -15,7 +15,7 @@ function VotesAnswer(props) {
                     <input type='radio' value={props.code} name='voteanswer' />
                     <span>{props.text}</span>
                     {
-                        (props.freeanswer) &&
+                        props.freeanswer &&
                         <input type='text' name='votefreeanswer' className='FreeAnswer'
                                defaultValue={props.deffreeanswertext}
                                onChange={freeAnswerTextChanged}

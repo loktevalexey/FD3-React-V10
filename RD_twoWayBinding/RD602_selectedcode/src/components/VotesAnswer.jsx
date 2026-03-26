@@ -23,7 +23,7 @@ function VotesAnswer(props) {
                         {props.text}
                     </span>
                     {
-                        (props.freeanswer) &&
+                        props.freeanswer &&
                         <input type='text' name='votefreeanswer' className='FreeAnswer'
                                value={props.freeanswertext}
                                onChange={freeAnswerTextChanged}

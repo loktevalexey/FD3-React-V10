@@ -4,16 +4,29 @@ import './VotesAnswer.css';
 
 function VotesAnswer(props) {
 
+    function answerClicked(eo) {
+        props.cbSelected(props.code);
+    }
+
+    function freeAnswerTextChanged(eo) {
+        props.cbFreeAnswerTextChanged(eo.target.value);
+    }
+
     if ( props.workMode===1 ) {
+        const isSelected=props.selectedAnswerCode===props.code;
         return (
             <div>
                 <label className='VotesBlockAnswer'>
-                    <input type='radio' value={props.code} name='voteanswer' />
+                    <input type='radio' value={props.code} name='voteanswer'
+                           onChange={answerClicked} />
                     <span>{props.text}</span>
                     {
                         props.freeanswer &&
                         <input type='text' name='votefreeanswer' className='FreeAnswer'
-                               defaultValue="???" />
+                               value={props.freeanswertext}
+                               onChange={freeAnswerTextChanged}
+                               disabled={props.selectedAnswerCode!==props.code}
+                        />
                     }
                 </label>
             </div>
