@@ -18,7 +18,8 @@ export default props => {
   );
 
   /*
-  а вот так хуки не работают:
+  а вот так хуки не работают - их можно вызывать только на верхнем уровне функции-компонента,
+  т.е. нельзя вызывать в циклах и внутри условий:
   for ( let i=0; i>clients.length; i++ ) {
     const client=clients[i];
     const clientMemoizeed=useMemo(
