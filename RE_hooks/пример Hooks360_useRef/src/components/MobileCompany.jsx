@@ -1,0 +1,65 @@
+﻿import React, { useState, useCallback } from 'react';
+
+import MobileClient from "./MobileClient";
+
+import "./MobileCompany.css";
+
+export default props => {
+
+  console.log("render MobileCompany");
+
+  const [companyName,setCompanyName]=useState("МТС");
+  const [clients,setClients]=useState(props.clients);
+
+  function changeBalance(clientId,delta) {
+    let newClients=clients.slice();
+    newClients.forEach( (client,index) => {
+      if ( client.id===clientId ) {
+        const newClient={...client,balance:client.balance+delta};
+        newClients[index]=newClient;
+      }
+    } );
+    setClients(newClients);
+  }
+
+  /*
+  function changeBalance(clientId,delta) {
+    setClients( currClients => {
+      let newClients=currClients.slice();
+      newClients.forEach( (client,index) => {
+        if ( client.id===clientId ) {
+          const newClient={...client,balance:client.balance+delta};
+          newClients[index]=newClient;
+        }
+      } );
+      return newClients;
+    } );
+  }
+ */
+
+  const memoizedChangeBalance = useCallback( changeBalance, [] );
+  // useCallback - обёртка над useMemo
+  // т.к. массив зависимостей пуст, useCallback при каждом рендере будет возвращать 
+  // одну и ту же ссылку на функцию changeBalance, 
+  // хоть сама changeBalance каждый раз новая.
+  // это не работает корректно, потому что changeBalance 
+  // меняет массив clients иммутабельно,
+  // и мемоизированная функция memoizedChangeBalance замыкает
+  // доступ к самому первому массиву clients, ещё НЕ изменённому
+
+  return (
+    <div className="MobileCompany">
+      Компания: <b>{companyName}</b><br />
+      <input type="button" value="=А1" onClick={()=>setCompanyName("A1")} />
+      <input type="button" value="=МТС" onClick={()=>setCompanyName("МТС")} />
+      <br /><br />
+      {
+        clients.map( client => <MobileClient key={client.id} 
+          id={client.id} 
+          fio={client.fio} balance={client.balance} 
+          cbChangeBalance={memoizedChangeBalance}
+          /> )
+      }
+    </div>
+  );
+};
