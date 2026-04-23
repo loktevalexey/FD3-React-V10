@@ -17,7 +17,7 @@ async function mobileCompanyDataFetcher() {
   return response.json();
 }
 
-export default function MobileCompany() {
+export default function MobileCompany(props) {
 
   const { data, error, isLoading } = useSWR(
     "mobile_company", // здесь некий уникальный идентификатор загружаемых данных, часто просто УРЛ данных
