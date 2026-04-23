@@ -1,10 +1,13 @@
 ﻿import {useState,useEffect} from 'react';
 
 import MobileClient from './MobileClient';
+import {useIsMounted} from "../hooks/useIsMounted";
 
 import './MobileCompany.css';
 
 export default function MobileCompany() {
+
+  const isMounted=useIsMounted();
 
   const [isDataReady,setDataReady]=useState(false);
   const [name,setName] = useState("???");
@@ -18,13 +21,15 @@ export default function MobileCompany() {
           "Accept": "application/json",
         },
       });
-      // в response - http-ответ
+      if ( !isMounted() )
+        return;
       if ( !response.ok ) {
         alert("fetch error " + response.status);
         return;
       }
       const data=await response.json();
-      // в data - пришедшие в ответе данные
+      if ( !isMounted() )
+        return;
       console.log(data);
       setName(data.companyName);
       setClients(data.clientsArr);
