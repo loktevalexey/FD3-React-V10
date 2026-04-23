@@ -21,7 +21,7 @@ export default function MobileCompany() {
           "Accept": "application/json",
         },
       });
-      if ( !isMounted() )
+      if ( !isMounted() ) // а вдруг компонент размонтировался пока выполнялся http-запрос?
         return;
       if ( !response.ok ) {
         alert("fetch error " + response.status);
