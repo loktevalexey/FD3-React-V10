@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { MobileCompany } from '../components/MobileCompany';
 
 import { appData } from '../appData';

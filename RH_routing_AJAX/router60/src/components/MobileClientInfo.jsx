@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const MobileClientInfo = ( { fio, balance } ) => {
 
   return (

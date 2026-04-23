@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { MobileClient } from './MobileClient';
 
 import './MobileClients.css';
@@ -17,7 +15,6 @@ export const MobileClients = ( { name, clients } ) => {
         {clientsCode}
       </div>
     </div>
-  )
-  ;
+  );
 
 }
