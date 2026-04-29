@@ -8,7 +8,7 @@ import { ProfileChange } from './components/ProfileChange';
 
 const store=createStore(combinedReducer);
 
-export const App = () => (
+const App = () => (
   <Provider store={store}>
     <div>
       <h1>Redux example #2</h1>

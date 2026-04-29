@@ -7,7 +7,7 @@ import { ProfileChange } from './components/ProfileChange';
 import { ShowFruits } from './components/ShowFruits';
 import { ShowProfile } from './components/ShowProfile';
 
-export const App = () => (
+const App = () => (
   <Provider store={store}>
     <div>
       <h1>Redux example #3</h1>
