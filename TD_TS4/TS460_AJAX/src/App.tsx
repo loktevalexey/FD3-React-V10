@@ -1,11 +1,7 @@
-import React from 'react';
-
 import { CompanyInfo } from "./components/CompanyInfo";
 
 function App() {
-  return (
-    <CompanyInfo />
-  );
+  return <CompanyInfo />;
 }
 
 export default App;
