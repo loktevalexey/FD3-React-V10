@@ -2,7 +2,7 @@
 import { act } from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
 
-import { InputNumber } from '../components/InputNumber';
+import { InputNumber } from './InputNumber';
 
 test('работа InputNumber', () => {
 

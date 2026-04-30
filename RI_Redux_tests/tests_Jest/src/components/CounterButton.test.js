@@ -1,7 +1,8 @@
 ﻿import React from 'react';
 import renderer from 'react-test-renderer';
 
-import CounterButton from '../components/CounterButton';
+import CounterButton from './CounterButton';
+import {act} from "react-dom/test-utils";
 
 test('работа CounterButton', () => {
 
@@ -19,17 +20,23 @@ test('работа CounterButton', () => {
   // или так: component.root.findByProps({className: "blocked"})
 
   // найдём в вёрстке компонента саму кнопку
-  const buttonElem = component.root.find( el => el.type=='input' ); 
+  const buttonElem = component.root.find( el => el.type==='input' );
   // и "нажмём" на неё
-  buttonElem.props.onClick();
+  // любые действия, вызывающие изменение стейта тестируемого
+  // компонента, надо оборачивать в хелпер act
+  act(() => {
+    buttonElem.props.onClick();
+  });
 
   // получаем уже изменённый снэпшот
   componentTree=component.toJSON();
   expect(componentTree).toMatchSnapshot();
 
   // "нажмём" кнопку ещё раз
-  buttonElem.props.onClick();
-  
+  act(() => {
+    buttonElem.props.onClick();
+  });
+
   // и получаем окончательный снэпшот
   componentTree=component.toJSON();
   expect(componentTree).toMatchSnapshot();
