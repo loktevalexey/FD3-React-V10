@@ -1,0 +1,17 @@
+.mobileClient
+{
+  padding: 2px 0;
+}
+
+.mobileClientBalance
+{
+  float: right;
+  width: 30px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.mobileClientFIO
+{
+  margin-right: 30px;
+}
