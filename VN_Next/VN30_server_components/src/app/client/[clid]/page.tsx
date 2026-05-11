@@ -18,6 +18,8 @@ export default async function ClientPage(props:ClientPageProps) {
     notFound();
   }
 
+  console.log("rendering ClientPage");
+
   return (
     <div>
       <PagesLinks/>

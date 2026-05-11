@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "пример №2 на Next.js - AppRouter",
-  description: "это пример с AppRouter",
+  title: "пример №3 на Next.js - server components",
+  description: "это пример с серверными компонентами",
 };
 
 type RootLayoutProps = {
@@ -10,6 +10,9 @@ type RootLayoutProps = {
 }
 
 export default function RootLayout({children}: RootLayoutProps) {
+
+  console.log("rendering RootLayout");
+
   return (
     <html>
       <body>
