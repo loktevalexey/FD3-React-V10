@@ -2,8 +2,6 @@ import {PagesLinks} from "@/src/components/PagesLinks";
 
 export default async function AboutPage() {
 
-    console.log("rendering AboutPage");
-
     return (
       <div>
         <PagesLinks/>

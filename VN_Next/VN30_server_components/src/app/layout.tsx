@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "пример №3 на Next.js - server components",
+  title: "пример server components",
   description: "это пример с серверными компонентами",
 };
 

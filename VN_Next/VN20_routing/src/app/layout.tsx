@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "пример №2 на Next.js - AppRouter",
+  title: "пример AppRouter",
   description: "это пример с AppRouter",
 };
 

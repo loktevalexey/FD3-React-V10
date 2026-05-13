@@ -18,7 +18,6 @@ export const PagesLinks = () => {
 
     console.log("rendering PagesLinks");
 
-
     return (
       <div className='PageLinks'>
         <Link href="/"        className={getLinkClass("/")}        >Main</Link>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "пример №3 на Next.js - server components",
-  description: "это пример с серверными компонентами",
+  title: "пример с fetch",
+  description: "это пример с загрузкой данных",
 };
 
 type RootLayoutProps = {

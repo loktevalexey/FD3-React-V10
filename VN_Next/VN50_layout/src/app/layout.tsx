@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
+import {Slogan} from "@/src/components/Slogan";
+
 export const metadata: Metadata = {
-    title: "пример с fetch",
-    description: "это пример с загрузкой данных",
+  title: "пример с layout",
+  description: "это пример с использованием layout",
 };
 
 type RootLayoutProps = {
@@ -11,12 +13,11 @@ type RootLayoutProps = {
 
 export default async function RootLayout({children}: RootLayoutProps) {
 
-  console.log("rendering RootLayout");
-
   return (
     <html>
       <body>
         {children}
+        <Slogan/>
       </body>
     </html>
   );

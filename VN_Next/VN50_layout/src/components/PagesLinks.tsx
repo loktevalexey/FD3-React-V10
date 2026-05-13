@@ -1,5 +1,6 @@
 'use client'
 
+import {useEffect} from "react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 
@@ -9,14 +10,19 @@ export const PagesLinks = () => {
 
     const pathname = usePathname();
 
+    useEffect(()=>{
+        console.log("PagesLinks mounted");
+        return ()=>{
+            console.log("PagesLinks unmounted");
+        }
+    },[]);
+
     function getLinkClass(href:string) {
         let className="PageLink";
         if ( href===pathname )
             className+=" ActivePageLink";
         return className;
     }
-
-    console.log("rendering PagesLinks");
 
     return (
       <div className='PageLinks'>

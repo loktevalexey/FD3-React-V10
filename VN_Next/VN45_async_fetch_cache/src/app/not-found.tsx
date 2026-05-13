@@ -1,6 +1,6 @@
 import {PagesLinks} from "@/src/components/PagesLinks";
 
-export default function NotFoundPage() {
+export default async function NotFoundPage() {
 
     console.log("rendering NotFoundPage");
 
