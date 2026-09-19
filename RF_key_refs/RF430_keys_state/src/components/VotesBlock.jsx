@@ -65,7 +65,7 @@ function VotesBlock(props) {
         }
         {
           (visibleQuestionNum===2) &&
-          <VotesQuestion key={1} question={props.question} auxClassName="VotesQuestionBlue" />
+          <VotesQuestion key={2} question={props.question} auxClassName="VotesQuestionBlue" />
         }
         <div className='Answers'>{answersCode}</div>
         {

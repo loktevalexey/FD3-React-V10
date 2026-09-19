@@ -43,8 +43,12 @@ function VotesBlock(props) {
         setVisibleQuestionNum(2);
     }
 
-    function showBorderedQuestion() {
+    function showBorderedRedQuestion() {
         setVisibleQuestionNum(3);
+    }
+
+    function showBorderedBlueQuestion() {
+        setVisibleQuestionNum(4);
     }
 
     const answersCode=answers.map( v =>
@@ -63,7 +67,8 @@ function VotesBlock(props) {
       <div className='VotesBlock'>
         <input type="button" value="красный" onClick={showRedQuestion} />
         <input type="button" value="синий" onClick={showBlueQuestion} />
-        <input type="button" value="в рамке" onClick={showBorderedQuestion} />
+        <input type="button" value="в рамке красный" onClick={showBorderedRedQuestion} />
+        <input type="button" value="в рамке синий" onClick={showBorderedBlueQuestion} />
         {
           (visibleQuestionNum===1) &&
           <VotesQuestion key={1} question={props.question} auxClassName="VotesQuestionRed" />
@@ -74,8 +79,14 @@ function VotesBlock(props) {
         }
         {
           (visibleQuestionNum===3) &&
-          <div style={{border:"solid green 2px"}}>
+          <div key={1} style={{border:"solid green 2px"}}>
             <VotesQuestion key={1} question={props.question} auxClassName="VotesQuestionRed" />
+          </div>
+        }
+        {
+          (visibleQuestionNum===4) &&
+          <div key={1} style={{border:"solid red 2px"}}>
+            <VotesQuestion key={1} question={props.question} auxClassName="VotesQuestionBlue" />
           </div>
         }
         <div className='Answers'>{answersCode}</div>

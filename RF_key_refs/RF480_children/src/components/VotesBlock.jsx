@@ -53,11 +53,12 @@ function VotesBlock(props) {
           <ColorFrame color="red">
               <div className='Answers'>{answersCode}</div>
           </ColorFrame>
-          {/*<ColorFrame color="red"*/}
-          {/*  children={<div className='Answers'>{answersCode}</div>} />*/}
-          {/*<ColorFrame color="red">*/}
-          {/*  { 2 }*/}
-          {/*</ColorFrame>*/}
+          {/* <ColorFrame color="red"
+            children={<div className='Answers'>{answersCode}</div>} 
+          /> */}
+          {/* <ColorFrame color="red">
+            { 2 }
+          </ColorFrame> */}
         {
           ((workMode===1)&&selectedAnswerCode) &&
           <input type='button' value='проголосовать' onClick={vote} />
