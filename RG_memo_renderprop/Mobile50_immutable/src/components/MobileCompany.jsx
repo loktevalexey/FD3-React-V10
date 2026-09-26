@@ -70,7 +70,7 @@ function MobileCompany(props) {
   console.log("MobileCompany render");
 
   const clientsCode=clients.map( client =>
-    <MobileClient key={client.id} info={client}  />
+    <MobileClient key={client.id} info={client} />
   );
 
   return (
