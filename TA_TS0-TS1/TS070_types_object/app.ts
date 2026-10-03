@@ -18,6 +18,7 @@ friend.fam="Петров";
     let friendKey:keyof {fam:string,im:string,otch:string,age:number};
     friendKey="fam";
     //friendKey="fam2"; // ошибка
+    friend[friendKey]="Петров";
 }
 
 {
