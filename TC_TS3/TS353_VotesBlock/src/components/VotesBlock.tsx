@@ -3,7 +3,7 @@ import React from 'react';
 import './VotesBlock.css';
 
 import VotesQuestion from './VotesQuestion';
-import VotesAnswer, {VotesAnswerDataType} from './VotesAnswer';
+import VotesAnswer, {type VotesAnswerDataType} from './VotesAnswer';
 
 type VotesBlockPropTypes = {
   answers: Array<VotesAnswerDataType>;
